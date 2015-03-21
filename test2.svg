@@ -1,0 +1,15 @@
+<svg 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+		<filter id="photo_filter">
+
+			<feImage width="500" height="300"
+				xlink:href="b4.jpg" result="photo"/>
+
+		</filter>
+
+	<rect width="1000" height="600" fill="yellow"
+		filter="url(#photo_filter)"/>
+
+</svg>

@@ -1,0 +1,15 @@
+<svg 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink">>
+<style type="text/css">
+		text {
+			fill: black;
+			font-family: Times;
+			font-style: italic;
+			font-size: 50px;
+		}
+	</style>
+<rect x="0" y="0" width="600" height="300" fill="green"/>
+  <text x="60" y="60">I love SVG!</text>
+  Sorry, your browser does not support inline SVG.
+</svg>

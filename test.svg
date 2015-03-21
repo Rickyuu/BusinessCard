@@ -1,0 +1,52 @@
+<svg 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+
+	<style type="text/css">
+		text {
+			fill: grey;
+			font-size: 60px;
+		}
+	</style>
+
+	<defs>
+		<g id="four_color_background">
+			<rect x="0" y="0" width="500" height="300" fill="rgb(246,53,14)" fill-opacity="0.8"/>
+			<text x="30" y="165">LIANG You</text>
+			<rect x="500" y="0" width="500" height="300" fill="rgb(124,187,00)" fill-opacity="0.8"/>
+			<text x="530" y="165">yliangao@ust.hk</text>
+			<rect x="0" y="300" width="500" height="300" fill="rgb(0,161,241)" fill-opacity="0.8"/>
+			<text x="30" y="465">(+852)56174292</text>
+			<rect x="500" y="300" width="500" height="300" fill="rgb(255,187,00)" fill-opacity="0.8"/>
+			<text x="530" y="465">Microsoft SDE</text>
+		</g>
+
+		<radialGradient id="face_gradient">
+			<stop offset="0" stop-color="white"/>
+			<stop offset=".55" stop-color="white"/>
+			<stop offset=".60" stop-color="grey"/>
+			<stop offset=".63" stop-color="black"/>
+		</radialGradient>
+
+		<rect x="100" y="100" width="200" height="200" fill="url(#face_gradient)"
+			id="gradient_area"/>
+
+		<filter id="photo_with_gradient"
+			color-interpolation-filters="sRGB">
+	
+			<feImage xlink:href="#gradient_area" result="gradient"/>
+			<feColorMatrix type="luminanceToAlpha"
+				in="gradient" result="alpha"/>
+
+			<feImage width="1000" height="800"
+				xlink:href="b3.jpg" result="photo"/>
+
+			<feComposite in="photo" in2="alpha"
+				operator="in" result="face_circle"/>
+		</filter>
+
+	</defs>
+
+	<use xlink:href="#four_color_background" x="0" y="0" />
+
+</svg>
