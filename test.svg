@@ -16,37 +16,40 @@
 			<rect x="500" y="0" width="500" height="300" fill="rgb(124,187,00)" fill-opacity="0.8"/>
 			<text x="530" y="165">yliangao@ust.hk</text>
 			<rect x="0" y="300" width="500" height="300" fill="rgb(0,161,241)" fill-opacity="0.8"/>
-			<text x="30" y="465">(+852)56174292</text>
+			<text x="30" y="465">Microsoft SDE</text>
 			<rect x="500" y="300" width="500" height="300" fill="rgb(255,187,00)" fill-opacity="0.8"/>
-			<text x="530" y="465">Microsoft SDE</text>
+			<text x="530" y="465">(+852)56174292</text>
 		</g>
 
 		<radialGradient id="face_gradient">
 			<stop offset="0" stop-color="white"/>
-			<stop offset=".55" stop-color="white"/>
-			<stop offset=".60" stop-color="grey"/>
-			<stop offset=".63" stop-color="black"/>
+			<stop offset=".30" stop-color="white"/>
+			<stop offset=".35" stop-color="grey"/>
+			<stop offset=".38" stop-color="black"/>
 		</radialGradient>
 
-		<rect x="100" y="100" width="200" height="200" fill="url(#face_gradient)"
+		<rect width="600" height="600" fill="url(#face_gradient)"
 			id="gradient_area"/>
 
-		<filter id="photo_with_gradient"
-			color-interpolation-filters="sRGB">
+		<filter id="photo_with_background"
+			color-interpolation-filters="sRGB" 
+			primitiveUnits="objectBoundingBox">
 	
-			<feImage xlink:href="#gradient_area" result="gradient"/>
+			<feImage xlink:href="#gradient_area" result="gradient" x="0.2" y="0" width="1" height="1"/>
 			<feColorMatrix type="luminanceToAlpha"
 				in="gradient" result="alpha"/>
 
-			<feImage width="1000" height="800"
-				xlink:href="b3.jpg" result="photo"/>
+			<feImage xlink:href="f.jpg" result="photo" 
+				x="-0.102" y="-0.05" width="1.2" height="1.2"/>
 
 			<feComposite in="photo" in2="alpha"
 				operator="in" result="face_circle"/>
+
 		</filter>
 
 	</defs>
 
-	<use xlink:href="#four_color_background" x="0" y="0" />
+	<use xlink:href="#four_color_background"/>
+	<rect x="0" y="0" width="1000" height="600" filter="url(#photo_with_background)"/>
 
 </svg>
