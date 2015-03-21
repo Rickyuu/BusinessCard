@@ -11,14 +11,10 @@
 
 	<defs>
 		<g id="four_color_background">
-			<rect x="0" y="0" width="500" height="300" fill="rgb(246,53,14)" fill-opacity="0.8"/>
-			<text x="30" y="165">LIANG You</text>
-			<rect x="500" y="0" width="500" height="300" fill="rgb(124,187,00)" fill-opacity="0.8"/>
-			<text x="530" y="165">yliangao@ust.hk</text>
-			<rect x="0" y="300" width="500" height="300" fill="rgb(0,161,241)" fill-opacity="0.8"/>
-			<text x="30" y="465">Microsoft SDE</text>
-			<rect x="500" y="300" width="500" height="300" fill="rgb(255,187,00)" fill-opacity="0.8"/>
-			<text x="530" y="465">(+852)56174292</text>
+			<rect x="0" y="0" width="500" height="300" fill="rgb(246,53,14)" fill-opacity="0.9"/>
+			<rect x="500" y="0" width="500" height="300" fill="rgb(124,187,00)" fill-opacity="0.9"/>			
+			<rect x="0" y="300" width="500" height="300" fill="rgb(0,161,241)" fill-opacity="0.9"/>
+			<rect x="500" y="300" width="500" height="300" fill="rgb(255,187,00)" fill-opacity="0.9"/>
 		</g>
 
 		<radialGradient id="face_gradient">
@@ -61,9 +57,27 @@
 
 		</filter>
 
+		<filter id="shadow"
+			color-interpolation-filters="sRGB">
+			<feGaussianBlur in="SourceAlpha"
+				stdDeviation="10" result="blur"/>
+			<feOffset in="blur"
+				dx="20" dy="20" result="offsetBlur"/>
+			<feBlend mode="normal" in="SourceGraphic"
+				in2="offsetBlur"/>
+		</filter>
+
 	</defs>
 
-	<use xlink:href="#four_color_background"/>
+	<use xlink:href="#four_color_background" filter="url(#shadow)"/>
 	<rect x="0" y="0" width="1000" height="600" filter="url(#photo_with_background)"/>
+	<a xlink:href="https://github.com/Rickyuu">
+		<text x="30" y="165">LIANG You</text>
+	</a>
+	<text x="530" y="165">yliangao@ust.hk</text>
+	<a xlink:href="http://en.wikipedia.org/wiki/Microsoft">
+		<text x="30" y="465">Microsoft SDE</text>
+	</a>
+	<text x="530" y="465">(+852)56174292</text>
 
 </svg>
