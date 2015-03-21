@@ -45,6 +45,20 @@
 			<feComposite in="photo" in2="alpha"
 				operator="in" result="face_circle"/>
 
+			<feConvolveMatrix
+				in="face_circle"
+				kernelMatrix="
+					0 0 0 0 0
+					0 0 0 0 0
+					0 -1 3 -1 0
+					0 0 0 0 0
+					0 0 0 0 0"
+				order="5 5"
+				divisor="0.8"
+				bias="0"
+				preserveAlpha="true"
+				/>
+
 		</filter>
 
 	</defs>
